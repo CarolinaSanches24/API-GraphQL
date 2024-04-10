@@ -14,6 +14,7 @@ async function bootstrap(){
     });
 
     const server = new ApolloServer({
+        schema,
 
     })
     const {url} = await server.listen();

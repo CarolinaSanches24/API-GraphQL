@@ -1,18 +1,20 @@
-import { Query, Resolver , Mutation} from "type-graphql";
+import { Query, Resolver, Mutation, Arg } from "type-graphql";
+import { CreateAppoimentInput } from "../dtos/inputs/create-appoiments-input";
+import { Appoiment } from "../dtos/models/appoiments-model";
 
 @Resolver()
-export class AppoimentsResolver{
-    @Query(()=>String)
-    async helloWorld(){
-        return 'hello World'
-    }
+export class AppoimentsResolver {
+  @Query(() => String)
+  async helloWorld() {
+    return "hello World";
+  }
 
-    @Mutation(()=>Boolean)
-    async createAppoiment(){
-        return true
-    }
-
-
-
-
+  @Mutation(() => Appoiment)
+  async createAppoiment(@Arg("data") data: CreateAppoimentInput) {
+    const appoiment = {
+      startsAt: data.startsAt,
+      endsAt: data.endsAt,
+    };
+    return appoiment;
+  }
 }
