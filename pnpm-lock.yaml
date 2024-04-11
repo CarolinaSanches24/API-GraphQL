@@ -8,12 +8,15 @@ dependencies:
   apollo-server:
     specifier: ^3.13.0
     version: 3.13.0(graphql@15.3.0)
+  class-validator:
+    specifier: ^0.14.1
+    version: 0.14.1
   graphql:
     specifier: 15.3.0
     version: 15.3.0
-  graphql-scalars:
-    specifier: ^1.23.0
-    version: 1.23.0(graphql@15.3.0)
+  graphql-iso-date:
+    specifier: ^3.6.1
+    version: 3.6.1(graphql@15.3.0)
   reflect-metadata:
     specifier: ^0.2.2
     version: 0.2.2
@@ -22,6 +25,9 @@ dependencies:
     version: 1.1.1(class-validator@0.14.1)(graphql@15.3.0)
 
 devDependencies:
+  '@types/graphql-iso-date':
+    specifier: ^3.4.3
+    version: 3.4.3
   ts-node-dev:
     specifier: ^2.0.0
     version: 2.0.0(@types/node@20.12.7)(typescript@5.4.4)
@@ -394,6 +400,12 @@ packages:
       '@types/minimatch': 5.1.2
       '@types/node': 20.12.7
     dev: false
+
+  /@types/graphql-iso-date@3.4.3:
+    resolution: {integrity: sha512-XBNgBXEY8Yy0Ax2NE7fCmeCTk8dc4AALPWpaDtIuP0bIez2eyPn9CVuhDnG153hUnX+QRASKJXcc+I2pplQ2ww==}
+    dependencies:
+      graphql: 15.3.0
+    dev: true
 
   /@types/http-errors@2.0.4:
     resolution: {integrity: sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==}
@@ -963,6 +975,14 @@ packages:
       get-intrinsic: 1.2.4
     dev: false
 
+  /graphql-iso-date@3.6.1(graphql@15.3.0):
+    resolution: {integrity: sha512-AwFGIuYMJQXOEAgRlJlFL4H1ncFM8n8XmoVDTNypNOZyQ8LFDG2ppMFlsS862BSTCDcSUfHp8PD3/uJhv7t59Q==}
+    peerDependencies:
+      graphql: ^0.5.0 || ^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0
+    dependencies:
+      graphql: 15.3.0
+    dev: false
+
   /graphql-query-complexity@0.7.2(graphql@15.3.0):
     resolution: {integrity: sha512-+VgmrfxGEjHI3zuojWOR8bsz7Ycz/BZjNjxnlUieTz5DsB92WoIrYCSZdWG7UWZ3rfcA1Gb2Nf+wB80GsaZWuQ==}
     peerDependencies:
@@ -970,16 +990,6 @@ packages:
     dependencies:
       graphql: 15.3.0
       lodash.get: 4.4.2
-    dev: false
-
-  /graphql-scalars@1.23.0(graphql@15.3.0):
-    resolution: {integrity: sha512-YTRNcwitkn8CqYcleKOx9IvedA8JIERn8BRq21nlKgOr4NEcTaWEG0sT+H92eF3ALTFbPgsqfft4cw+MGgv0Gg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      graphql: 15.3.0
-      tslib: 2.6.2
     dev: false
 
   /graphql-subscriptions@1.2.1(graphql@15.3.0):
@@ -1004,7 +1014,6 @@ packages:
   /graphql@15.3.0:
     resolution: {integrity: sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==}
     engines: {node: '>= 10.x'}
-    dev: false
 
   /has-property-descriptors@1.0.2:
     resolution: {integrity: sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg==}

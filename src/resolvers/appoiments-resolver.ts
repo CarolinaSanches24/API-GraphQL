@@ -23,17 +23,25 @@ export class AppoimentsResolver {
   }
 
   @Mutation(() => Appoiment)
-  async createAppoiment(@Arg("data") data: CreateAppoimentInput) {
+
+  async createAppoiment(@Arg('data') data: CreateAppoimentInput) {
+    if (!data.customerId) {
+      throw new Error("customerId is required");
+    }
+  
     const appoiment = {
       startsAt: data.startsAt,
       endsAt: data.endsAt,
+      customerId: data.customerId,
     };
-    return appoiment;
+      return appoiment;
+   
   }
+
 
   @FieldResolver(() => Customer)
   async customer(@Root() appoiment: Appoiment) {
-    console.log(appoiment);
+
 
     return {
       name: "Jonh Doe",
